@@ -23,16 +23,18 @@ public class TP1_telecom {
         // TODO code application logic here
         
         
-        //double[] voltC = calculVA(3);
-        double[] fs = calculAV(tabC);
-        
+        double[] voltC = calculVA(8);
+        double[] fs = calculAV(tabA);
+        double[] ham = calculFinal(voltC, fs);
         
         for(int i = 0; i < 5; i++){
-           System.out.println(fs[i]);
+            if(verifMesure(ham[i])){
+                System.out.println(arrondir(ham[i]) + " Vpk");
+            }else{
+                System.out.println(arrondir(ham[i]*1000) + " mVpk");
+            }
            
         }
-        
-        
     }
     
     public static double[] calculVA( double v ) {
@@ -86,5 +88,32 @@ public class TP1_telecom {
         }
         
         return av;
+    }
+    
+    public static double[] calculFinal(double tabHam[], double tabAV[]){
+        double ham[] = new double[5];
+        
+        for(int i = 0; i < 5; i++){
+            ham[i] = tabHam[i]*tabAV[i];
+        }
+        
+        return ham;
+    }
+    
+    public static double arrondir(double valeur){
+        
+        long facteur = (long)Math.pow(10, 2);
+        valeur = valeur * facteur;
+        long temp = Math.round(valeur);
+        
+        return (double)temp/facteur;
+    }
+    
+    public static boolean verifMesure(double valeur){
+        if(valeur < 1 && valeur > -1){
+            return false;
+        }
+        
+        return true;
     }
 }
