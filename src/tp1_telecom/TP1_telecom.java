@@ -37,34 +37,10 @@ public class TP1_telecom {
                 */
         EcranPrincipal ecran = new EcranPrincipal();
     }
-    
-    public static double[] calculVA( double v ) {
+    public double[] calculV(int FV, double v, int[] tab){
         double volt[] = new double[5];
-        
-        
         for(int i = 0; i < 5; i++ ){
-            volt[i] = (2 * v)/(Math.PI * tabA[i]);
-        }
-        
-        return volt;
-    }
-    
-    public static double[] calculVB( double v ) {
-        double volt[] = new double[5];
-        
-        
-        for(int i = 0; i < 5; i++ ){
-            volt[i] = (2 * v)/(Math.PI * tabB[i]);
-        }
-        
-        return volt;
-    }
-    
-    public static double[] calculVC( double v ) {
-        double volt[] = new double[5];
-        
-        for(int i = 0; i < 5; i++ ){
-            volt[i] = (4 * v)/(Math.PI * tabC[i]);
+            volt[i] = (FV * v)/(Math.PI * tab[i]);
         }
         
         return volt;
