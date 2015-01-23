@@ -14,9 +14,7 @@ public class TP1_telecom {
      * @param args the command line arguments
      */
     
-    static int[] tabA = {1,2,3,4,5};
-    static int[] tabB = {1,-2,3,-4,5};
-    static int[] tabC = {1,3,5,7,9};
+    
     
     public double[] calculV(int FV, double v, int[] tab){
         double volt[] = new double[5];
