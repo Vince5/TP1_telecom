@@ -46,7 +46,7 @@ public class TP1_telecom {
         return volt;
     }
     
-    public static int[] calculF(int tab[]) {
+    public int[] calculF(int tab[]) {
         int f[] = new int[5];
         
         for(int i = 0; i < 5; i++){
@@ -56,7 +56,7 @@ public class TP1_telecom {
         return f;
     }
     
-    public static double[] calculAV(int tab[]) {
+    public double[] calculAV(int tab[]) {
         int f[] = calculF(tab);
         double av[] = new double[5];
         
@@ -67,7 +67,7 @@ public class TP1_telecom {
         return av;
     }
     
-    public static double[] calculFinal(double tabHam[], double tabAV[]){
+    public double[] calculFinal(double tabHam[], double tabAV[]){
         double ham[] = new double[5];
         
         for(int i = 0; i < 5; i++){
@@ -77,7 +77,7 @@ public class TP1_telecom {
         return ham;
     }
     
-    public static double arrondir(double valeur){
+    public double arrondir(double valeur){
         
         long facteur = (long)Math.pow(10, 2);
         valeur = valeur * facteur;
@@ -86,7 +86,7 @@ public class TP1_telecom {
         return (double)temp/facteur;
     }
     
-    public static boolean verifMesure(double valeur){
+    public boolean verifMesure(double valeur){
         if(valeur < 1 && valeur > -1){
             return false;
         }
