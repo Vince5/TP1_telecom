@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package tp1_telecom;
-
 /**
  *
  * @author Vincent
@@ -22,7 +21,7 @@ public class TP1_telecom {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        
+        /*
         double[] voltC = calculVA(8);
         double[] fs = calculAV(tabA);
         double[] ham = calculFinal(voltC, fs);
@@ -35,6 +34,8 @@ public class TP1_telecom {
             }
            
         }
+                */
+        EcranPrincipal ecran = new EcranPrincipal();
     }
     
     public static double[] calculVA( double v ) {
