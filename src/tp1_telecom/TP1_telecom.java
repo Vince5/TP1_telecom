@@ -18,25 +18,6 @@ public class TP1_telecom {
     static int[] tabB = {1,-2,3,-4,5};
     static int[] tabC = {1,3,5,7,9};
     
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        /*
-        double[] voltC = calculVA(8);
-        double[] fs = calculAV(tabA);
-        double[] ham = calculFinal(voltC, fs);
-        
-        for(int i = 0; i < 5; i++){
-            if(verifMesure(ham[i])){
-                System.out.println(arrondir(ham[i]) + " Vpk");
-            }else{
-                System.out.println(arrondir(ham[i]*1000) + " mVpk");
-            }
-           
-        }
-                */
-        EcranPrincipal ecran = new EcranPrincipal();
-    }
     public double[] calculV(int FV, double v, int[] tab){
         double volt[] = new double[5];
         for(int i = 0; i < 5; i++ ){
