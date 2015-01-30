@@ -5,6 +5,24 @@
  */
 package tp1_telecom;
 
+import java.awt.BasicStroke;
+import java.io.File;
+import java.io.IOException;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
+import org.jfree.chart.labels.StandardXYItemLabelGenerator;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
+/**
+
+
 /**
  *
  * @author Vincent
@@ -43,10 +61,44 @@ public class FenetreGraphique extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void AfficherGraphique(){
+    public void AfficherGraphique(int tabF[],double tab[], String titre){
         
-        //XYSeriesCollection dataSet = new XYSeriesCollection();
+        //XYSeries series = new XYSeries("XYGraph");
+        XYSeriesCollection dataset = new XYSeriesCollection();
         
+        for(int i=0; i<5;i++){
+            XYSeries series = new XYSeries("H "+(i+1));
+            series.add(tabF[i],tab[i]);
+            series.add(tabF[i],0);
+            dataset.addSeries(series);
+        }
+        //         Generate the graph
+        JFreeChart chart = ChartFactory.createXYLineChart(titre, // Title
+                "Fréquence (KH2)", // x-axis Label
+                "Volts (pk)", // y-axis Label
+                dataset, // Dataset
+                PlotOrientation.VERTICAL, // Plot Orientation
+                true, // Show Legend
+                true, // Use tooltips
+                false // Configure chart to generate URLs?
+            );
+        
+        XYPlot plot = (XYPlot) chart.getPlot();
+        plot.getRenderer().setBaseItemLabelGenerator(new StandardXYItemLabelGenerator());
+        for(int i = 0; i < 5; i++){
+            plot.getRenderer().setSeriesStroke(i, new BasicStroke(5.0f));
+            //plot.getRenderer().setItemLabelsVisible(true);
+            plot.getRenderer().setSeriesItemLabelsVisible(i, true);
+        }
+        
+        
+        
+        ChartFrame frame = new ChartFrame("Diagramme", chart);
+        frame.pack();
+        frame.setSize(700, 700);
+        frame.setVisible(true);
+
+
         
     }
 

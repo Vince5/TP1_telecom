@@ -23,12 +23,14 @@ public class Evenements {
         double [] tabH = new double[5]; 
         double [] tabAV = new double[5];
         double [] tabFinal = new double[5];
+        int [] tabF = new int[5];
         
         switch(formule){
             case 0:
                 tabH = tel.calculV(2, v, tabA);
                 tabAV = tel.calculAV(tabA);
                 tabFinal = tel.calculFinal(tabH, tabAV);
+                tabF = tel.calculF(tabA);
                 
                 if(graphChoisi){
                     for(int i = 0; i < 5; i++ ){
@@ -44,6 +46,11 @@ public class Evenements {
                       }
 
                     }
+                    
+                    FenetreGraphique f1 = new FenetreGraphique();
+                    f1.AfficherGraphique(tabF, tabH, "Spectra of Square-wave input");
+                    
+                    
                 }else{
                     for(int i = 0; i < 5; i++ ){
                     
@@ -57,7 +64,10 @@ public class Evenements {
                           System.out.print(tabFinal[i] + " Vpk ");
                       }
 
-                    }  
+                    }
+                    
+                    FenetreGraphique f1 = new FenetreGraphique();
+                    f1.AfficherGraphique(tabF, tabFinal, "Spectra of output voltage of low-pass filter");
                 }
                 
                 
@@ -66,6 +76,7 @@ public class Evenements {
                 tabH = tel.calculV(2, v, tabB);
                 tabAV = tel.calculAV(tabB);
                 tabFinal = tel.calculFinal(tabH, tabAV);
+                tabF = tel.calculF(tabA);
                 
                 if(graphChoisi){
                     for(int i = 0; i < 5; i++ ){
@@ -81,6 +92,10 @@ public class Evenements {
                       }
 
                     }
+                    
+                    FenetreGraphique f1 = new FenetreGraphique();
+                    f1.AfficherGraphique(tabF, tabH, "Spectra of Square-wave input");
+                    
                 }else{
                     for(int i = 0; i < 5; i++ ){
                     
@@ -94,7 +109,10 @@ public class Evenements {
                           System.out.print(tabFinal[i] + " Vpk ");
                       }
 
-                    }  
+                    }
+                    
+                    FenetreGraphique f1 = new FenetreGraphique();
+                    f1.AfficherGraphique(tabF, tabFinal, "Spectra of output voltage of low-pass filter");
                 }
                 
                 break;
@@ -102,6 +120,7 @@ public class Evenements {
                 tabH = tel.calculV(4, v, tabC);
                 tabAV = tel.calculAV(tabC);
                 tabFinal = tel.calculFinal(tabH, tabAV);
+                tabF = tel.calculF(tabC);
                 
                 if(graphChoisi){
                     for(int i = 0; i < 5; i++ ){
@@ -117,6 +136,9 @@ public class Evenements {
                       }
 
                     }
+                    
+                    FenetreGraphique f1 = new FenetreGraphique();
+                    f1.AfficherGraphique(tabF, tabH, "Spectra of Square-wave input");
                 }else{
                     for(int i = 0; i < 5; i++ ){
                     
@@ -130,11 +152,14 @@ public class Evenements {
                           System.out.print(tabFinal[i] + " Vpk ");
                       }
 
-                    }  
+                    }
+                    FenetreGraphique f1 = new FenetreGraphique();
+                    f1.AfficherGraphique(tabF, tabFinal, "Spectra of output voltage of low-pass filter");
                 }
                 
                 break;
         }
+        
     }
     
 }
