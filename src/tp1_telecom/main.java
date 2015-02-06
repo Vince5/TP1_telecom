@@ -13,20 +13,6 @@ public class main {
         public static void main(String[] args) {
         // TODO code application logic here
         
-        /*
-        double[] voltC = calculVA(8);
-        double[] fs = calculAV(tabA);
-        double[] ham = calculFinal(voltC, fs);
-        
-        for(int i = 0; i < 5; i++){
-            if(verifMesure(ham[i])){
-                System.out.println(arrondir(ham[i]) + " Vpk");
-            }else{
-                System.out.println(arrondir(ham[i]*1000) + " mVpk");
-            }
-           
-        }
-                */
         EcranPrincipal ecran = new EcranPrincipal();
     }
 }
