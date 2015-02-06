@@ -60,7 +60,12 @@ public class FenetreGraphique extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+    * @param tabF est le tableau des frequence
+    * @param tab est le tableau des Voltage
+    * @param titre est le titre du tableau
+    * La fonction AfficherGraphique affiche le graphique des harmonies
+    */
     public void AfficherGraphique(int tabF[],double tab[], String titre){
         
         //XYSeries series = new XYSeries("XYGraph");

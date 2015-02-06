@@ -15,7 +15,12 @@ public class Evenements {
     private int[] tabB = {1,-2,3,-4,5};
     private int[] tabC = {1,3,5,7,9};
     
-    
+    /**
+    * @param v est le voltage choisi
+    * @param formule est la formule qui a été choisi.
+    * @param graphChoisi est utiliser pour savoir si on prend le le graphique avec le filtre ou pas.
+    * Le constructeur est utiliser pour faire les appels de calcule et faire afficher le graphique
+    */
     
     Evenements(int v, int formule, boolean graphChoisi) {
         
@@ -39,16 +44,9 @@ public class Evenements {
                     }
                     
                     for(int i=0; i<5; i++){
-                      if(!tel.verifMesure(tabH[i])){
-                          System.out.print(tabH[i]*1000 + " mVpk ");
-                      }else{
                           System.out.print(tabH[i] + " Vpk ");
-                      }
-
                     }
                     
-                    FenetreGraphique f1 = new FenetreGraphique();
-                    f1.AfficherGraphique(tabF, tabH, "Spectra of Square-wave input");
                     
                     
                 }else{
@@ -58,16 +56,9 @@ public class Evenements {
                     }
                     
                     for(int i=0; i<5; i++){
-                      if(!tel.verifMesure(tabFinal[i])){
-                          System.out.print(tabFinal[i]*1000 + " mVpk ");
-                      }else{
                           System.out.print(tabFinal[i] + " Vpk ");
-                      }
-
                     }
                     
-                    FenetreGraphique f1 = new FenetreGraphique();
-                    f1.AfficherGraphique(tabF, tabFinal, "Spectra of output voltage of low-pass filter");
                 }
                 
                 
@@ -85,16 +76,9 @@ public class Evenements {
                     }
                     
                     for(int i=0; i<5; i++){
-                      if(!tel.verifMesure(tabH[i])){
-                          System.out.print(tabH[i]*1000 + " mVpk ");
-                      }else{
                           System.out.print(tabH[i] + " Vpk ");
-                      }
-
                     }
                     
-                    FenetreGraphique f1 = new FenetreGraphique();
-                    f1.AfficherGraphique(tabF, tabH, "Spectra of Square-wave input");
                     
                 }else{
                     for(int i = 0; i < 5; i++ ){
@@ -103,16 +87,8 @@ public class Evenements {
                     }
                     
                     for(int i=0; i<5; i++){
-                      if(!tel.verifMesure(tabFinal[i])){
-                          System.out.print(tabFinal[i]*1000 + " mVpk ");
-                      }else{
                           System.out.print(tabFinal[i] + " Vpk ");
-                      }
-
                     }
-                    
-                    FenetreGraphique f1 = new FenetreGraphique();
-                    f1.AfficherGraphique(tabF, tabFinal, "Spectra of output voltage of low-pass filter");
                 }
                 
                 break;
@@ -129,16 +105,8 @@ public class Evenements {
                     }
                     
                     for(int i=0; i<5; i++){
-                      if(!tel.verifMesure(tabH[i])){
-                          System.out.print(tabH[i]*1000 + " mVpk ");
-                      }else{
                           System.out.print(tabH[i] + " Vpk ");
-                      }
-
                     }
-                    
-                    FenetreGraphique f1 = new FenetreGraphique();
-                    f1.AfficherGraphique(tabF, tabH, "Spectra of Square-wave input");
                 }else{
                     for(int i = 0; i < 5; i++ ){
                     
@@ -146,20 +114,18 @@ public class Evenements {
                     }
                     
                     for(int i=0; i<5; i++){
-                      if(!tel.verifMesure(tabFinal[i])){
-                          System.out.print(tabFinal[i]*1000 + " mVpk ");
-                      }else{
                           System.out.print(tabFinal[i] + " Vpk ");
-                      }
-
                     }
-                    FenetreGraphique f1 = new FenetreGraphique();
-                    f1.AfficherGraphique(tabF, tabFinal, "Spectra of output voltage of low-pass filter");
                 }
                 
                 break;
         }
-        
+        FenetreGraphique f1 = new FenetreGraphique();
+        if(graphChoisi){
+            f1.AfficherGraphique(tabF, tabH, "Spectra of Square-wave input");
+        }else{
+            f1.AfficherGraphique(tabF, tabFinal, "Spectra of output voltage of low-pass filter");
+        }
     }
     
 }

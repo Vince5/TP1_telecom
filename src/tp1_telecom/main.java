@@ -7,7 +7,7 @@ package tp1_telecom;
 
 /**
  *
- * @author Julien
+ * @author Julien Tessir et Vincent Belanger
  */
 public class main {
         public static void main(String[] args) {
